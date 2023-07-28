@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/model/NoteModel.dart';
 import 'package:noteapp/utils/kcolor.dart';
 
 class NoteCard extends StatelessWidget {
    final int index;
+   final NoteModel note;
   NoteCard({
     required this.index, 
-    super.key,
+    super.key, required this.note,
   });
 
  
@@ -18,18 +20,21 @@ class NoteCard extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       color: color,
       child: Column(
-        children: const [
-          Text(
-            "Todays Schedule",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        children:  [
+          Align( 
+            alignment: Alignment.topLeft,
+            child: Text(
+              note.title??'',
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            style: TextStyle(
+           note.description ?? '',
+             style:const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,
             ),
