@@ -1,5 +1,5 @@
 import 'dart:ffi';
-import 'dart:math';
+import 'dart:math' as math;
 import 'package:noteapp/utils/kcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -128,3 +128,9 @@ class _HomePageState extends State<HomePage>
     );
   }
 }
+
+
+
+
+
+
